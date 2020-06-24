@@ -5,6 +5,7 @@ import re
 from tweepy import StreamListener
 from tweepy import OAuthHandler
 from tweepy import API
+from tweepy import StreamListener
 import time
 
 #Replace twitter credentials
@@ -18,7 +19,6 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token_key, access_token_secret)
 
 #creating a new listener class (as taught by Alex Hanna)
-from tweepy import StreamListener
 class SListener(StreamListener):
     def __init__(self, api = None, fprefix = 'streamer'):
         self.api = api or API()
